@@ -36,6 +36,7 @@ class MainHandler(tornado.web.RequestHandler):
 
 application = tornado.web.Application([
     (r"/", MainHandler)],
+    static_path="static",
     debug=True)
 
 if __name__ == "__main__":
