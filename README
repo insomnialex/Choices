@@ -1,0 +1,14 @@
+Choices.
+A web application that will randomly display one item from a list of items that have been previously added.
+
+Why?
+We always have trouble finding a place to go to lunch.  
+This was easier and less messy than throwing markers at a board.
+
+It can be used for whatevs.
+
+Makes use of:
+-TornadoWeb http://www.tornadoweb.org/
+-MongoDB http://www.mongodb.org/
+
+Written by Alex Quintero
