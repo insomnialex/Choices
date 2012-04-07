@@ -1,20 +1,19 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>Make a choice for me oh Python</title>
     <style type='text/css'>
     #chosen
       {
       color:red;
       }
-    .name
+    body
       {
       cursor:default;
       }
     </style>
     <script>
-    function GetRestaurant(){}
     function AddRestaurant()
       {
       var name = document.getElementById('name').value
@@ -48,15 +47,23 @@
         }
       document.getElementById('choices').innerHTML = text
       }
+    function ShowHidden()
+      {
+      document.getElementById('other').style.visibility = 'visible'
+      }
     </script>
   </head>
   <body onload='ShowChoices()'>
-  GO TO <span id='chosen'>{{ args }}</span> TODAY!
+    <div onclick='ShowHidden()'>
+    GO TO <span id='chosen' title="CLICK HERE TO ADD OR REMOVE PLACES">{{ args }}</span> TODAY!
+    </div>
   <br>
   <br>
-  <input type="text" value="name" id="name"><button onclick='AddRestaurant()'>ADD</button><button onclick='RemoveRestaurant()'>REMOVE</button>
-  <span id='response'/>
-  <br>
+  <div id='other' style="visibility:hidden;">
+    <input type="text" id="name"><button onclick='AddRestaurant()'>ADD</button><button onclick='RemoveRestaurant()'>REMOVE</button>
+    <div id='response'/>
+    <br>
   <div id='choices'/>
+  </div>
   </body>
 </html>

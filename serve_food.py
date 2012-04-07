@@ -4,14 +4,14 @@ import tornado.ioloop
 import tornado.web
 
 
-PORT = 80
+PORT = 8081
 FOOD = Food()
 
 
 class MainHandler(tornado.web.RequestHandler):
 
     def get(self):
-        arg = FOOD.choose()
+        arg = FOOD.choose().upper()
         self.render('index.html', args=arg)
 
     def post(self):
@@ -40,6 +40,6 @@ application = tornado.web.Application([
     debug=True)
 
 if __name__ == "__main__":
-    application.listen(80)
+    application.listen(PORT)
     tornado.ioloop.IOLoop.instance().start()
 
