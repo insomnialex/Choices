@@ -43,13 +43,18 @@
       for(var i in choices)
         {
         var name = choices[i]
-        text += '<div class="name" onclick="document.getElementById('+"'name'"+').value='+"'"+name+"'"+'">' + name + '</div>'
+        var id = escape(name)
+        text += '<div class="name" id="'+id+'" onclick="Pick('+"'"+id+"'"+')">' + name + '</div>'
         }
       document.getElementById('choices').innerHTML = text
       }
     function ShowHidden()
       {
       document.getElementById('other').style.visibility = 'visible'
+      }
+    function Pick(id)
+      {
+      document.getElementById('name').value = document.getElementById(id).innerHTML
       }
     </script>
   </head>
