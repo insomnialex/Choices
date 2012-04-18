@@ -1,0 +1,3 @@
+OSX installation instructions
+
+sudo easy_install pymongo tornado
